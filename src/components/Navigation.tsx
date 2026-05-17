@@ -32,7 +32,7 @@ export function Navigation() {
             <Film className="h-5 w-5 text-white" />
           </motion.div>
           <span className="font-display text-lg font-bold tracking-tight">
-            Smilo<span className="text-accent">Graph</span>
+            <span className="text-accent">SIZEN</span>
           </span>
         </Link>
 
