@@ -15,9 +15,9 @@ const body = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Smilographer | Professional Video Editor Portfolio",
+  title: "SIZEN | Professional Video Editor Portfolio",
   description:
-    "Cinematic video edits — documentary, gaming montage, wedding films, teasers & more. Hire Smilographer for your next project.",
+    "Cinematic video edits — documentary, gaming montage, wedding films, teasers & more. Hire SIZEN for your next project.",
   keywords: [
     "video editor",
     "portfolio",

@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { ClientPortal } from "@/components/ClientPortal";
 
 export const metadata = {
-  title: "Client Portal | Smilographer",
+  title: "Client Portal | SIZEN",
   description: "Private client area for reviewing your video edits.",
 };
 

@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           error:
-            "This Gmail is not registered for the client portal. Email smilographer@gmail.com to request access.",
+            "This Gmail is not registered for the client portal. Email sizen@gmail.com to request access.",
         },
         { status: 403 }
       );

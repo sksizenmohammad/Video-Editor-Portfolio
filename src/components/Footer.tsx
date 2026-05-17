@@ -12,11 +12,11 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <Film className="h-5 w-5 text-accent" />
             <span className="font-display font-bold">
-              Smilo<span className="text-accent">Graph</span>
+              <span className="text-accent">SIZEN</span>
             </span>
           </div>
           <p className="text-center text-sm text-gray-500">
-            © {new Date().getFullYear()} Smilographer. All rights reserved.
+            © {new Date().getFullYear()} SIZEN. All rights reserved.
           </p>
           <motion.div className="flex gap-6 text-sm text-gray-400">
             <Link href="/" className="hover:text-white">

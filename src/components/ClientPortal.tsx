@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
-import { Lock, Users, KeyRound, Mail, LogOut, Loader2 } from "lucide-react";
+import { Lock, Users, KeyRound, Mail, LogOut, Loader as Loader2 } from "lucide-react";
 import type { VideoEdit } from "@/types/video";
 import type { ClientSession } from "@/types/client";
 import { VideoCard } from "./VideoCard";
@@ -186,8 +186,8 @@ export function ClientPortal() {
           </form>
           <p className="mt-6 text-center text-xs text-gray-600">
             Need access? Email{" "}
-            <a href="mailto:smilographer@gmail.com" className="text-accent-secondary">
-              smilographer@gmail.com
+            <a href="mailto:sizen@gmail.com" className="text-accent-secondary">
+              sizen@gmail.com
             </a>
           </p>
         </motion.div>

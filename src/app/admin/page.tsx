@@ -2,7 +2,7 @@ import { AdminPanel } from "@/components/AdminPanel";
 import { getAllClients } from "@/lib/clients";
 
 export const metadata = {
-  title: "Admin | Smilographer Portfolio",
+  title: "Admin | SIZEN Portfolio",
   description: "Manage portfolio videos and daily uploads.",
 };
 

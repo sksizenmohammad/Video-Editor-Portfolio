@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, Send, Instagram, Youtube } from "lucide-react";
 
-const EMAIL = "smilographer@gmail.com";
+const EMAIL = "sizen@gmail.com";
 const PHONE = "+918777819463";
 
 function openGmailCompose(name: string, senderEmail: string, project: string, message: string) {
