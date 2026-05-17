@@ -81,6 +81,11 @@ body {
   background: #ff3366;
 }
 
+/* Hide default cursor everywhere — CustomCursor takes over */
+* {
+  cursor: none !important;
+}
+
 /* Video card hover glow */
 .video-card-glow {
   transition: box-shadow 0.4s ease, transform 0.4s ease;

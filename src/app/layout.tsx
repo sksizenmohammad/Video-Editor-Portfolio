@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, DM_Sans } from "next/font/google";
 import "./globals.css";
+import { CustomCursor } from "@/components/CustomCursor";
 
 const display = Bebas_Neue({
   weight: "400",
@@ -34,7 +35,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body className={`${body.className} grain antialiased`}>{children}</body>
+      <body className={`${body.className} grain antialiased cursor-none`}>
+        <CustomCursor />
+        {children}
+      </body>
     </html>
   );
 }
