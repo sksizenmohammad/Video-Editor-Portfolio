@@ -6,6 +6,26 @@ import { Mail, Phone, Send, Instagram, Youtube } from "lucide-react";
 const EMAIL = "smilographer@gmail.com";
 const PHONE = "+918777819463";
 
+function openGmailCompose(name: string, senderEmail: string, project: string, message: string) {
+  const subject = `Portfolio Inquiry from ${name} — ${project}`;
+  const body = [
+    `Name: ${name}`,
+    `Reply-to: ${senderEmail}`,
+    `Project type: ${project}`,
+    "",
+    message,
+  ].join("\n");
+
+  const gmailUrl = new URL("https://mail.google.com/mail/");
+  gmailUrl.searchParams.set("view", "cm");
+  gmailUrl.searchParams.set("fs", "1");
+  gmailUrl.searchParams.set("to", EMAIL);
+  gmailUrl.searchParams.set("su", subject);
+  gmailUrl.searchParams.set("body", body);
+
+  window.open(gmailUrl.toString(), "_blank", "noopener,noreferrer");
+}
+
 export function Contact() {
   return (
     <section id="contact" className="relative py-24">
@@ -103,10 +123,15 @@ export function Contact() {
               onSubmit={(e) => {
                 e.preventDefault();
                 const form = e.currentTarget;
-                const name = (form.elements.namedItem("name") as HTMLInputElement).value;
-                const message = (form.elements.namedItem("message") as HTMLTextAreaElement)
-                  .value;
-                window.location.href = `mailto:${EMAIL}?subject=Portfolio Inquiry from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`;
+                const name = (form.elements.namedItem("name") as HTMLInputElement).value.trim();
+                const senderEmail = (
+                  form.elements.namedItem("email") as HTMLInputElement
+                ).value.trim();
+                const project = (form.elements.namedItem("project") as HTMLSelectElement).value;
+                const message = (
+                  form.elements.namedItem("message") as HTMLTextAreaElement
+                ).value.trim();
+                openGmailCompose(name, senderEmail, project, message);
               }}
             >
               <input
