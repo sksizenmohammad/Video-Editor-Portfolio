@@ -6,10 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Film, Users, Shield } from "lucide-react";
 
 const navLinks = [
-  { href: "/#work", label: "Work" },
-  { href: "/#categories", label: "Categories" },
-  { href: "/#latest", label: "Latest" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/work", label: "Work" },
+  { href: "/categories", label: "Categories" },
+  { href: "/latest", label: "Latest" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Navigation() {
