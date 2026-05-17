@@ -1,0 +1,10 @@
+import { AdminPanel } from "@/components/AdminPanel";
+
+export const metadata = {
+  title: "Admin | Smilographer Portfolio",
+  description: "Manage portfolio videos and daily uploads.",
+};
+
+export default function AdminPage() {
+  return <AdminPanel />;
+}

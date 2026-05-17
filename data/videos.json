@@ -1,0 +1,69 @@
+[
+  {
+    "id": "1",
+    "title": "Urban Stories — Mini Documentary",
+    "description": "A 4-minute documentary exploring street artists and their craft in Mumbai.",
+    "category": "documentary",
+    "audience": "public",
+    "youtubeId": "dQw4w9WgXcQ",
+    "featured": true,
+    "isLatest": true,
+    "uploadedAt": "2026-05-17"
+  },
+  {
+    "id": "2",
+    "title": "Valorant Ace Montage",
+    "description": "Fast-paced gaming montage with beat drops and motion graphics.",
+    "category": "gaming",
+    "audience": "public",
+    "youtubeId": "dQw4w9WgXcQ",
+    "featured": true,
+    "isLatest": true,
+    "uploadedAt": "2026-05-16"
+  },
+  {
+    "id": "3",
+    "title": "Priya & Arjun — Wedding Film",
+    "description": "Cinematic wedding highlight reel with emotional vows and reception energy.",
+    "category": "wedding",
+    "audience": "public",
+    "youtubeId": "dQw4w9WgXcQ",
+    "featured": false,
+    "isLatest": false,
+    "uploadedAt": "2026-05-15"
+  },
+  {
+    "id": "4",
+    "title": "TechStart Launch Teaser",
+    "description": "30-second product launch teaser with bold typography and glitch transitions.",
+    "category": "teaser",
+    "audience": "public",
+    "youtubeId": "dQw4w9WgXcQ",
+    "featured": false,
+    "isLatest": false,
+    "uploadedAt": "2026-05-14"
+  },
+  {
+    "id": "5",
+    "title": "Brand X — Social Ad Cut",
+    "description": "15s and 30s versions for Instagram Reels and YouTube pre-roll.",
+    "category": "commercial",
+    "audience": "client",
+    "clientName": "Brand X Agency",
+    "youtubeId": "dQw4w9WgXcQ",
+    "featured": false,
+    "isLatest": true,
+    "uploadedAt": "2026-05-17"
+  },
+  {
+    "id": "6",
+    "title": "Neon Nights — Music Visualizer Edit",
+    "description": "Beat-synced edit for an indie electronic track release.",
+    "category": "music",
+    "audience": "public",
+    "youtubeId": "dQw4w9WgXcQ",
+    "featured": false,
+    "isLatest": false,
+    "uploadedAt": "2026-05-10"
+  }
+]
