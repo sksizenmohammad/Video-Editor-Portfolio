@@ -74,7 +74,7 @@ export function Hero() {
             transition={{ duration: 2, repeat: Infinity }}
             className="inline-flex flex-col items-center gap-2 text-gray-500 hover:text-accent"
           >
-            <span className="text-xs uppercase tracking-widest">Scroll</span>
+            <span className="text-xs uppercase tracking-widest">I appreciate the opportunity and would love to help bring your idea to life.</span>
             <ArrowDown className="h-5 w-5" />
           </motion.a>
         </motion.div>
