@@ -60,7 +60,7 @@ In Vercel → Project → **Settings → Environment Variables**, add:
 | Name | Value |
 |------|--------|
 | `ADMIN_PASSWORD` | Your secure admin password |
-| `NEXT_PUBLIC_CLIENT_CODE` | Code you share with clients (e.g. `smilo2026`) |
+| `CLIENT_ACCESS_CODE` | Access code you share with all clients (e.g. `smilo2026`) |
 
 Redeploy after adding variables.
 
@@ -116,7 +116,21 @@ The easiest and most reliable way on Vercel is to edit `data/videos.json`:
 }
 ```
 
-Share the client portal URL (`/client`) and access code (`NEXT_PUBLIC_CLIENT_CODE`).
+Share the client portal URL (`/client`), your access code (`CLIENT_ACCESS_CODE`), and ensure their Gmail is listed in `data/clients.json`. Each client only sees videos tagged with their `clientId`.
+
+### Register a new client
+
+Edit `data/clients.json`:
+
+```json
+{
+  "id": "unique-client-id",
+  "name": "Client Display Name",
+  "email": "client@gmail.com"
+}
+```
+
+Then assign client videos in `data/videos.json` with `"audience": "client"` and `"clientId": "unique-client-id"`.
 
 ### Using the Admin panel
 

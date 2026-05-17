@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import type { VideoCategory, VideoAudience, VideoEdit } from "@/types/video";
 import { CATEGORY_LABELS } from "@/types/video";
+import type { Client } from "@/types/client";
 
 const CATEGORIES: VideoCategory[] = [
   "documentary",
@@ -31,12 +32,16 @@ const emptyForm = {
   category: "documentary" as VideoCategory,
   audience: "public" as VideoAudience,
   youtubeId: "",
-  clientName: "",
+  clientId: "",
   featured: false,
   isLatest: true,
 };
 
-export function AdminPanel() {
+interface AdminPanelProps {
+  clients: Client[];
+}
+
+export function AdminPanel({ clients }: AdminPanelProps) {
   const [password, setPassword] = useState("");
   const [authenticated, setAuthenticated] = useState(false);
   const [videos, setVideos] = useState<VideoEdit[]>([]);
@@ -67,10 +72,13 @@ export function AdminPanel() {
     setLoading(true);
     setMessage("");
 
+    const selectedClient = clients.find((c) => c.id === form.clientId);
     const video: Omit<VideoEdit, "id"> = {
       ...form,
       uploadedAt: new Date().toISOString().split("T")[0],
-      clientName: form.audience === "client" ? form.clientName : undefined,
+      clientId: form.audience === "client" ? form.clientId : undefined,
+      clientName:
+        form.audience === "client" ? selectedClient?.name : undefined,
     };
 
     const res = await fetch("/api/videos", {
@@ -248,12 +256,19 @@ export function AdminPanel() {
               <option value="client">Client Only</option>
             </select>
             {form.audience === "client" && (
-              <input
-                placeholder="Client name"
-                value={form.clientName}
-                onChange={(e) => setForm({ ...form, clientName: e.target.value })}
-                className="rounded-xl border border-border bg-void px-4 py-3 text-white outline-none focus:border-accent"
-              />
+              <select
+                required
+                value={form.clientId}
+                onChange={(e) => setForm({ ...form, clientId: e.target.value })}
+                className="rounded-xl border border-border bg-void px-4 py-3 text-white outline-none focus:border-accent sm:col-span-2"
+              >
+                <option value="">Select registered client</option>
+                {clients.map((c) => (
+                  <option key={c.id} value={c.id}>
+                    {c.name} ({c.email})
+                  </option>
+                ))}
+              </select>
             )}
           </motion.div>
 
@@ -302,7 +317,8 @@ export function AdminPanel() {
               <div>
                 <p className="font-medium text-white">{v.title}</p>
                 <p className="text-xs text-gray-500">
-                  {CATEGORY_LABELS[v.category]} · {v.audience} · {v.uploadedAt}
+                  {CATEGORY_LABELS[v.category]} · {v.audience}
+                  {v.clientId && ` · ${v.clientId}`} · {v.uploadedAt}
                   {v.isLatest && " · Latest"}
                 </p>
               </div>

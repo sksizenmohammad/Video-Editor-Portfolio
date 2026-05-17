@@ -18,6 +18,7 @@ export interface VideoEdit {
   youtubeId?: string;
   thumbnailUrl?: string;
   videoUrl?: string;
+  clientId?: string;
   clientName?: string;
   featured: boolean;
   isLatest: boolean;
