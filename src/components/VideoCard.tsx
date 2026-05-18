@@ -71,12 +71,12 @@ export function VideoCard({ video, index = 0 }: VideoCardProps) {
         </button>
 
         <motion.div
-          className="p-5"
+          className="p-3 sm:p-5"
           initial={false}
           whileHover={{ backgroundColor: "rgba(255, 51, 102, 0.05)" }}
         >
-          <div className="mb-2 flex items-center justify-between gap-2">
-            <span className="rounded-full bg-accent/20 px-2.5 py-0.5 text-xs font-medium text-accent">
+          <div className="mb-2 flex items-center justify-between gap-2 flex-wrap">
+            <span className="rounded-full bg-accent/20 px-2 sm:px-2.5 py-0.5 text-xs font-medium text-accent">
               {CATEGORY_LABELS[video.category]}
             </span>
             <span className="flex items-center gap-1 text-xs text-gray-500">
@@ -88,8 +88,8 @@ export function VideoCard({ video, index = 0 }: VideoCardProps) {
               })}
             </span>
           </div>
-          <h3 className="font-display text-lg font-bold text-white">{video.title}</h3>
-          <p className="mt-1 line-clamp-2 text-sm text-gray-400">{video.description}</p>
+          <h3 className="font-display text-base sm:text-lg font-bold text-white line-clamp-2">{video.title}</h3>
+          <p className="mt-1 line-clamp-2 text-xs sm:text-sm text-gray-400">{video.description}</p>
         </motion.div>
       </motion.article>
 
@@ -112,13 +112,13 @@ export function VideoCard({ video, index = 0 }: VideoCardProps) {
               <button
                 type="button"
                 onClick={() => setPlaying(false)}
-                className="absolute -top-12 right-0 rounded-full p-2 text-gray-400 hover:text-white"
+                className="absolute -top-10 sm:-top-12 right-0 rounded-full p-2 text-gray-400 hover:text-white"
                 aria-label="Close player"
               >
-                <X className="h-8 w-8" />
+                <X className="h-6 w-6 sm:h-8 sm:w-8" />
               </button>
               <motion.div
-                className="aspect-video overflow-hidden rounded-2xl border border-border shadow-2xl shadow-accent/20"
+                className="aspect-video overflow-hidden rounded-lg sm:rounded-2xl border border-border shadow-2xl shadow-accent/20"
                 layoutId={`video-${video.id}`}
               >
                 <iframe
@@ -129,7 +129,7 @@ export function VideoCard({ video, index = 0 }: VideoCardProps) {
                   className="h-full w-full"
                 />
               </motion.div>
-              <h3 className="mt-4 text-center font-display text-xl font-bold">{video.title}</h3>
+              <h3 className="mt-3 sm:mt-4 text-center font-display text-lg sm:text-xl font-bold line-clamp-2">{video.title}</h3>
             </motion.div>
           </motion.div>
         )}

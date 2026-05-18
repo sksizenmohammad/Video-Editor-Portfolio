@@ -22,22 +22,22 @@ export function Navigation() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-void/80 backdrop-blur-xl"
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-3 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="group flex items-center gap-2">
           <motion.div
             whileHover={{ rotate: 360 }}
             transition={{ duration: 0.6 }}
-            className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-accent-secondary"
+            className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-accent-secondary shrink-0"
           >
-            <Film className="h-5 w-5 text-white" />
+            <Film className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
           </motion.div>
-          <span className="font-display text-lg font-bold tracking-tight">
+          <span className="font-display text-base sm:text-lg font-bold tracking-tight">
             <span className="text-accent">SIZEN</span>
           </span>
         </Link>
 
         <motion.div
-          className="hidden items-center gap-8 md:flex"
+          className="hidden items-center gap-6 lg:gap-8 md:flex"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
@@ -46,27 +46,27 @@ export function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-gray-400 transition-colors hover:text-white"
+              className="text-xs sm:text-sm text-gray-400 transition-colors hover:text-white"
             >
               {link.label}
             </Link>
           ))}
         </motion.div>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-2 sm:gap-3 md:flex">
           <Link
             href="/client"
-            className="flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-gray-300 transition-all hover:border-accent-secondary hover:text-accent-secondary"
+            className="flex items-center gap-1 sm:gap-2 rounded-full border border-border px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm text-gray-300 transition-all hover:border-accent-secondary hover:text-accent-secondary"
           >
-            <Users className="h-4 w-4" />
-            Client Portal
+            <Users className="h-3 w-3 sm:h-4 sm:w-4" />
+            <span className="hidden sm:inline">Client Portal</span>
           </Link>
           <Link
             href="/admin"
-            className="flex items-center gap-2 rounded-full bg-elevated px-4 py-2 text-sm text-gray-400 transition-all hover:text-white"
+            className="flex items-center gap-1 sm:gap-2 rounded-full bg-elevated px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm text-gray-400 transition-all hover:text-white"
           >
-            <Shield className="h-4 w-4" />
-            Admin
+            <Shield className="h-3 w-3 sm:h-4 sm:w-4" />
+            <span className="hidden sm:inline">Admin</span>
           </Link>
         </div>
 
@@ -76,7 +76,7 @@ export function Navigation() {
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {open ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
         </button>
       </nav>
 
@@ -89,7 +89,7 @@ export function Navigation() {
             className="overflow-hidden border-t border-border bg-surface md:hidden"
           >
             <motion.div
-              className="flex flex-col gap-4 px-4 py-6"
+              className="flex flex-col gap-3 px-4 py-4 sm:py-6"
               initial="closed"
               animate="open"
               variants={{
@@ -107,7 +107,7 @@ export function Navigation() {
                 >
                   <Link
                     href={link.href}
-                    className="block text-lg text-gray-300"
+                    className="block text-base sm:text-lg text-gray-300 py-2"
                     onClick={() => setOpen(false)}
                   >
                     {link.label}
@@ -116,11 +116,19 @@ export function Navigation() {
               ))}
               <Link
                 href="/client"
-                className="flex items-center gap-2 text-accent-secondary"
+                className="flex items-center gap-2 text-accent-secondary py-2"
                 onClick={() => setOpen(false)}
               >
                 <Users className="h-5 w-5" />
                 Client Portal
+              </Link>
+              <Link
+                href="/admin"
+                className="flex items-center gap-2 text-gray-300 py-2"
+                onClick={() => setOpen(false)}
+              >
+                <Shield className="h-5 w-5" />
+                Admin
               </Link>
             </motion.div>
           </motion.div>
