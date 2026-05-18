@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Play, ArrowDown, Sparkles } from "lucide-react";
+import { Play, ArrowDown, Sparkles, Instagram } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -66,8 +67,34 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="mt-20"
+          className="mt-16"
         >
+          <motion.div className="mb-8 flex justify-center gap-6">
+            <motion.a
+              href="https://www.instagram.com/ismilographer/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.15, rotate: 5 }}
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-border text-gray-400 transition-colors hover:border-accent hover:text-accent"
+              aria-label="Instagram"
+            >
+              <Instagram className="h-6 w-6" />
+            </motion.a>
+            <motion.a
+              href="https://www.fiverr.com/sellers/sksizenmohammad/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.15, rotate: -5 }}
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-border text-gray-400 transition-colors hover:border-accent-secondary hover:text-accent-secondary"
+              aria-label="Fiverr"
+            >
+              <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 2h3v10H2V2zm5 0h3v10H7V2zm5 0h3v10h-3V2zm5 4h3v6h-3V6z" />
+                <rect x="2" y="14" width="16" height="2" />
+              </svg>
+            </motion.a>
+          </motion.div>
+
           <motion.a
             href="#latest"
             animate={{ y: [0, 8, 0] }}
