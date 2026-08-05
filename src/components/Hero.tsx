@@ -55,7 +55,7 @@ export function Hero() {
             View My Work
           </Link>
           <Link
-            href="#contact"
+            href="/hire"
             className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full border-2 border-border px-6 py-3 sm:px-8 sm:py-4 font-semibold text-white text-sm sm:text-base transition-all hover:border-accent hover:bg-accent/10"
           >
             Hire Me
