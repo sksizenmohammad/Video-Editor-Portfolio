@@ -48,7 +48,7 @@ export function Hero() {
           className="mt-6 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:gap-4"
         >
           <Link
-            href="#work"
+            href="/work"
             className="btn-shimmer group w-full sm:w-auto flex items-center justify-center gap-2 rounded-full px-6 py-3 sm:px-8 sm:py-4 font-semibold text-white text-sm sm:text-base shadow-lg shadow-accent/30 transition-transform hover:scale-105"
           >
             <Play className="h-4 w-4 sm:h-5 sm:w-5 fill-white" />
