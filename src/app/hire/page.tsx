@@ -54,10 +54,10 @@ export default function HirePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <h1 className="font-display text-4xl sm:text-5xl font-black text-white mb-4">
-                Let's <span className="text-gradient">Work Together</span>
+                Let&apos;s <span className="text-gradient">Work Together</span>
               </h1>
               <p className="text-gray-400 text-lg mb-8">
-                Fill out the form below and I'll get back to you as soon as possible.
+                Fill out the form below and I&apos;ll get back to you as soon as possible.
               </p>
             </motion.div>
 
@@ -72,7 +72,7 @@ export default function HirePage() {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
                 <p className="text-gray-400">
-                  Your form has been submitted successfully. I'll be in touch soon!
+                  Your form has been submitted successfully. I&apos;ll be in touch soon!
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}

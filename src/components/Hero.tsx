@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Play, ArrowDown, Sparkles, Instagram } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 export function Hero() {
   return (
